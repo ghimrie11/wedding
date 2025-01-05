@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destination Wedding</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -80,48 +83,40 @@
         .hero-section .btn:hover {
             background-color: red;
         }
-
-        /* New Gallery Styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
-
         .view-all {
             background: none;
             border: none;
             color: darkred;
             cursor: pointer;
         }
-
         .trending-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 40px;
         }
-
         .destination-card {
             position: relative;
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 4/3;
         }
-
         .destination-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
         .heart-btn {
             position: absolute;
             top: 10px;
@@ -132,7 +127,6 @@
             color: white;
             font-size: 24px;
         }
-
         .card-content {
             position: absolute;
             bottom: 0;
@@ -142,20 +136,18 @@
             background: linear-gradient(transparent, rgba(0,0,0,0.7));
             color: white;
         }
-
         .selection-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            margin-bottom: 40px;
         }
-
         .selection-card {
             background: #FFE4E6;
             padding: 10px;
             border-radius: 8px;
             text-align: center;
         }
-
         .selection-card img {
             width: 100%;
             aspect-ratio: 4/3;
@@ -163,76 +155,168 @@
             border-radius: 8px;
             margin-bottom: 10px;
         }
+        .cta {
+            background-image: url('img/costumize.jpg');
+            background-size:cover;
+            padding: 40px 40px;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
 
-        /* Rest of your existing styles */
-        .section {
-            padding: 50px 20px;
-            text-align: start;
         }
-        .section h2 {
+        .cta-content {
+            max-width: 1200px;
+            height: 300px;
+            margin:  auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cta h1 {
+            font-size: 3.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .plan-button {
+            background-color: darkred;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        .customize-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .customize-text {
+            padding-right: 40px;
+        }
+        .customize-text h2 {
             font-size: 2rem;
             margin-bottom: 20px;
+        }
+        .customize-text p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .faq-section {
+            margin-top: 40px;
+        }
+        .faq-section h3 {
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-answer {
+            padding: 0 0 15px;
+            display: none;
+            color: #666;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
         }
         .packages {
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin: 40px 20px;
         }
         .package {
             background: darkred;
             color: white;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 40px;
             width: 200px;
             text-align: center;
         }
         .package:hover {
             background: red;
         }
-        footer {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            color: #ff4c4c;
-            text-decoration: none;
-        }
-        .cta {
-            background: #ffe8e8;
+        .footer-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 50px 20px;
-            text-align: center;
         }
-        .cta button {
-            background: #ff4c4c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 1.2em;
-            cursor: pointer;
+        .footer-column h4 {
+            margin-bottom: 20px;
         }
-        .cta button:hover {
-            background-color: red;
+        .footer-column a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 10px;
         }
-
-        /* Responsive Design */
+        .footer-column p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .social-links {
+            display: flex;
+            gap: 50px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .social-links a img {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+        }
+        footer {
+            background: #f5f5f5;
+        }
         @media (max-width: 1024px) {
             .trending-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
         @media (max-width: 768px) {
             .trending-grid,
             .selection-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .customize-section {
+                grid-template-columns: 1fr;
+            }
+            .footer-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .packages {
+                flex-direction: column;
+                align-items: center;
+            }
+            .package {
+                width: 80%;
+            }
         }
-
         @media (max-width: 480px) {
             .trending-grid,
             .selection-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-info {
                 grid-template-columns: 1fr;
             }
         }
@@ -243,13 +327,13 @@
         <div class="logo">Destination Wedding</div>
         <div class="menu">
             <a href="#home">Home</a>
-            <a href="#plans">Plans</a>
+            <a href="#packages">Plans</a>
             <a href="#destination">Destination</a>
             <a href="#contact">Contact Us</a>
         </div>
         <div class="buttons">
             <button>Get Started</button>
-            <button><img src="img/profile-icon.png" alt="Profile" style="width: 20px; height: 20px;"></button>
+            <button><img src="img/profile-icon.png" alt="Profile" style="width: 40px; height: 20px;"></button>
         </div>
     </nav>
 
@@ -258,8 +342,7 @@
         <button class="btn">See Plans</button>
     </section>
 
-    <div class="container">
-        <!-- Trending Destinations -->
+    <div id="destination" class="container">
         <div class="header">
             <h2>Top Trending Wedding Destinations</h2>
             <button class="view-all">View all</button>
@@ -300,7 +383,6 @@
             </div>
         </div>
 
-        <!-- Top Selection -->
         <h2>Top selection</h2>
         <div class="selection-grid">
             <div class="selection-card">
@@ -322,8 +404,15 @@
         </div>
     </div>
 
+    <section class="cta">
+        <div class="cta-content">
+            <h1>Customize yours</h1>
+            <button class="plan-button">Plan With Us</button>
+        </div>
+    </section>
+
     <section id="packages" class="section">
-        <h2>Packages</h2>
+        <h2 style="text-align: center;">Packages</h2>
         <div class="packages">
             <div class="package">Premium</div>
             <div class="package">Standard</div>
@@ -331,22 +420,123 @@
         </div>
     </section>
 
-    <section class="cta">
-        <h2>Customize Yours</h2>
-        <button>Plan With Us</button>
-    </section>
+    <div class="customize-section">
+        <div class="customize-text">
+            <h2>Plan your wedding with sweeter memories and better view.</h2>
+            <p>We intertwine tradition and adventure.</p>
+            
+            <div class="faq-section">
+                <h3>Commonly asked questions</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Why wouldn't I just hire a full-time designer?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        [Answer content here]
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a limit to how many requests I can have?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        [Answer content here]
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How fast will I receive my designs?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        [Answer content here]
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What will I receive in 48 hours?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        [Answer content here]
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Who are the designers?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        [Answer content here]
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customize-image">
+            <img src="img/customize-wedding.jpg" alt="Customized Wedding" style="width: 100%; border-radius: 10px;">
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Destination Wedding Planner. All rights reserved. <a href="#">Privacy Policy</a></p>
-    </footer>
+    <footer id="contact">
+        <div class="footer-info">
+            <div class="footer-column">
+                <h4>LOGO</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipis
 
-    <script>
-        // Add heart button functionality
-        document.querySelectorAll('.heart-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                this.textContent = this.textContent === '♡' ? '♥' : '♡';
-            });
-        });
-    </script>
-</body>
-</html>     
+                    <footer>
+                        <div class="footer-info">
+                            <div class="footer-column">
+                                <h4>LOGO</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            </div>
+                            <div class="footer-column">
+                                <h4>Quick Links</h4>
+                                <a href="#">Home</a>
+                                <a href="#">Destination</a>
+                                <a href="#">Contact</a>
+                                <a href="#">Plan</a>
+                            </div>
+                            <div class="footer-column">
+                                <h4>Get in touch</h4>
+                                <p>Call: +977 9841234567</p>
+                                <p>Email: support@venue.com</p>
+                            </div>
+                            <div class="footer-column">
+                                <h4>Legal</h4>
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Use</a>
+                                <a href="#">Accessibility</a>
+                            </div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; border-top: 1px solid #eee;">
+                            <p>Connect with us</p>
+                            <div class="social-links">
+                                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                                <a href="#"><img src="img/instagram.jpg" alt="Instagram"></a>
+                                <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                            </div>
+                        </div>
+                        </footer>
+                        
+                        <script>
+                        // Add heart button functionality
+                        document.querySelectorAll('.heart-btn').forEach(button => {
+                            button.addEventListener('click', function() {
+                                this.textContent = this.textContent === '♡' ? '♥' : '♡';
+                            });
+                        });
+                        
+                        // FAQ accordion functionality
+                        document.querySelectorAll('.faq-question').forEach(question => {
+                            question.addEventListener('click', function() {
+                                this.classList.toggle('active');
+                                const toggle = this.querySelector('.toggle');
+                                toggle.textContent = this.classList.contains('active') ? '-' : '+';
+                            });
+                        });
+                        </script>
+                        </body>
+                        </html>
+                        
